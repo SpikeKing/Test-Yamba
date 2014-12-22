@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.example.wcl.test_yamba"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".StatusActivity"
+            android:label="@string/status_update">
+            <intent-filter>
+                <action android:name="com.example.wcl.test_yamba.action.tweet" />
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings">
+        </activity>
+
+        <activity android:name=".DetailsActivity">
+        </activity>
+
+        <service android:name=".RefreshService">
+        </service>
+
+        <provider
+            android:name="com.example.wcl.test_yamba.StatusProvider"
+            android:authorities="com.example.wcl.test_yamba.StatusProvider"
+            android:exported="false" />
+
+    </application>
+
+</manifest>
