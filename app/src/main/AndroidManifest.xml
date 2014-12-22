@@ -45,6 +45,8 @@
             android:authorities="com.example.wcl.test_yamba.StatusProvider"
             android:exported="false" />
 
+        <activity android:name=".SubActivity"/>
+
     </application>
 
 </manifest>

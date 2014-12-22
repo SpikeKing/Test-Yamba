@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 /**
+ * 回退按钮的SubActivity父类
+ * <p/>
  * Created by wangchenlong on 14-12-16.
  */
 public class SubActivity extends Activity {

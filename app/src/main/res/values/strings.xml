@@ -23,4 +23,6 @@
     <string name="pref_password">password</string>
     <string name="pref_interval">interval</string>
 
+    <string name="tweet_max_number">140</string>
+
 </resources>
