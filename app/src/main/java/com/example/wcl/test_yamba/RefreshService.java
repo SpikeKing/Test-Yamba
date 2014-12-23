@@ -18,6 +18,8 @@ import com.marakana.android.yamba.clientlib.YambaClientException;
 import java.util.List;
 
 /**
+ * 更新信息
+ * <p/>
  * Created by wangchenlong on 14-12-16.
  */
 public class RefreshService extends IntentService {
@@ -27,6 +29,7 @@ public class RefreshService extends IntentService {
     public RefreshService() {
         super(RefreshService.class.getSimpleName());
     }
+
 
     @Override
     public void onCreate() {
@@ -42,7 +45,8 @@ public class RefreshService extends IntentService {
         final String password = prefs.getString("password", "");
 
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please update your username and password", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Please update your username and password", Toast.LENGTH_LONG)
+                    .show();
             return;
         }
 

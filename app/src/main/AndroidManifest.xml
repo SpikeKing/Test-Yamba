@@ -4,6 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
     <application
         android:allowBackup="true"
@@ -15,7 +17,7 @@
             android:name=".StatusActivity"
             android:label="@string/status_update">
             <intent-filter>
-                <action android:name="com.example.wcl.test_yamba.action.tweet" />
+                <action android:name="com.example.wcl.test_yamba.action.tweet"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
@@ -37,15 +39,31 @@
         <activity android:name=".DetailsActivity">
         </activity>
 
+        <activity android:name=".SubActivity"/>
+
         <service android:name=".RefreshService">
         </service>
 
         <provider
             android:name="com.example.wcl.test_yamba.StatusProvider"
             android:authorities="com.example.wcl.test_yamba.StatusProvider"
-            android:exported="false" />
+            android:exported="false"/>
 
-        <activity android:name=".SubActivity"/>
+        <receiver android:name=".BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.example.wcl.test_yamba.action.UPDATED_INTERVAL"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".NotificationReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.example.wcl.test_yamba.action.NEW_STATUSES"/>
+            </intent-filter>
+        </receiver>
+
 
     </application>
 
