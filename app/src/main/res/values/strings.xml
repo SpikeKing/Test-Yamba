@@ -25,4 +25,9 @@
 
     <string name="tweet_max_number">140</string>
 
+    <string name="user_info_example">Slashdot</string>
+    <string name="created_at_info_example">10 minutes ago</string>
+    <string name="message_info_example">Android just became the #1 OS on the planet. Take that,
+        Microsoft! http://t.co</string>
+
 </resources>
